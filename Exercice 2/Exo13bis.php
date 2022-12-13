@@ -19,31 +19,7 @@
 
 <?php
 // aide : https://www.youtube.com/watch?v=CdCuQ6wyWDk
-//        https://www.chiny.me/la-poo-en-php-programmation-orientee-objet-8-2.php
-
-// Class Voiture{
-//     private $_marque;
-//     private $_modele;
-//     private $nbPortes;
-
-//     public function __construct($marque, $modele){
-//         $this->_marque = $marque;
-//         $this->_modele = $modele;
-//     }
-//     public function getMarque(){
-//         return $this->_marque;
-//     }
-//     public function getmodele(){
-//         return $this->_modele;
-//     }
-//     public function setmodele($speed){
-//         $this->_modele = $speed;
-//     }
-// }
-
-// $vehicule1 = new Voiture("Peugeot", 408);
-// $vehicule1->setmodele(408);
-// echo "Nom et modèle du véhicule: ". $vehicule1->getmarque(). " " . $vehicule1->getmodele(); 
+//        https://www.chiny.me/la-poo-en-php-programmation-orientee-objet-8-2.php 
 
 class Voiture
 {
