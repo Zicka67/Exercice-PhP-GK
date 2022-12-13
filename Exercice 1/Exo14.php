@@ -14,17 +14,3 @@ $dateNaissance = "24-03-1989";
 $dateAujourdhui = date("Y-m-d");
 $diff = date_diff(date_create($dateNaissance), date_create($dateAujourdhui));
 echo 'Age de la personne: '.$diff->format('%y ans' . ' ' . '%m mois' . ' ' . '%d jours');
-
-
-//$dateAujourdhui = [21, 05 , 2018];
-//$dateNaissance = [17, 01, 1985];
-
-//$ageJour = abs(($dateAujourdhui[0]) - abs($dateNaissance[0]));
-//$ageMois = abs(($dateAujourdhui[1]) - abs($dateNaissance[1]));
-//$ageAnnee = abs(($dateAujourdhui[2]) -  abs($dateNaissance[2]));
-
-
-//echo "Age de la personne: $ageAnnee ans $ageMois mois $ageJour jours";
-
-//Donne la valeur absolue du nbr
-//echo abs($ageJour);
