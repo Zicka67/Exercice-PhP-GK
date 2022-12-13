@@ -1,0 +1,15 @@
+game :
+
+https://www.w3schools.com/php/exercise.asp?filename=exercise_strings1
+
+http://www.flexboxdefense.com/
+
+https://mastery.games/flexboxzombies/  
+
+https://codingfantasy.com/games/css-grid-attack/play
+
+Art.book@hotmail.fr
+Azerty007
+
+
+https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_tbody
