@@ -24,11 +24,11 @@ class Personne
         $this->_dtNaissance = $dtNaissance;
     }
 
-    public function calcAge($dtNaissance)
+    public function calcAge()
     {
         $dtAujourdhui = date("Y-m-d");
-        $diff = date_diff(date_create($dtNaissance), date_create($dtAujourdhui));
-        
+        $diff = date_diff(date_create($this->_dtNaissance), date_create($dtAujourdhui));
+        echo  $this->_nom ." " . $this->_prenom. " " .$diff->format('%y ans'). "<br>"; 
     }
 }
 
@@ -42,7 +42,8 @@ $personne1 = new Personne("DUPONT", "Michel", "1980-02-19");
 $personne2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");
 
 var_dump($personne1, $personne2);
-echo 'Michel DUPONT à ' . $diff->format('%y ans <br>');
-echo 'Alice DUCHEMIN à ' . $diff->format('%y ans');
+$personne1->calcAge();
+$personne2->calcAge();
+
 
 ?>
