@@ -69,13 +69,10 @@ class Personne
 
 }
 
-
 // ou 
 // $dtNaissance = "19-02-1980";
 // $dtAujourdhui = date("Y-m-d");
 // $diff = date_diff(date_create($dtNaissance), date_create($dtAujourdhui));
-
-
 
 $personne1 = new Personne("DUPONT", "Michel", "1980-02-19");
 $personne2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");
