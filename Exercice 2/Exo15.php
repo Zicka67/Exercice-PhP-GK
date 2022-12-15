@@ -12,6 +12,9 @@ L'adresse elan@elan-formation.fr est une adresse e-mail valide
 
 <?php
 
+//https://www.w3schools.com/PHP/filter_validate_url.asp    exemple 
+//https://www.php.net/manual/fr/function.filter-var.php    exemple
+
 $url = "http://php.net/manual/fr/book.filter.php";
 
 if (filter_var($url, FILTER_VALIDATE_URL)) {
