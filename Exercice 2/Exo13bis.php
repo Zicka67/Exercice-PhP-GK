@@ -23,25 +23,19 @@
 
 class Voiture
 {
-    private $_marque;
-    private $_modele;
-    private $_nbPortes;
-    private $_status;
-    private $_vitesse;
-    private $_demarrer;
-    private $_stopper;
-    private $_ralentir;
-
+    private string $_marque;
+    private string $_modele;
+    private int $_nbPortes;
+    private bool $_status;
+    private int $_vitesse;
+    
     public function __construct($marque, $modele, $nbPortes)
     {
         $this->_marque = $marque;
         $this->_modele = $modele;
         $this->_nbPortes = $nbPortes;
-        $this->_status = 0;
+        $this->_status = false;
         $this->_vitesse = 0;
-        $this->_demarrer = 0;
-        $this->_stopper = 0;
-        $this->_ralentir = 0;
     }
     // ***********  MARQUE  ************
     public function getMarque()
@@ -72,7 +66,7 @@ class Voiture
         $this->_status = $allumer;
     }
     // ***********  ACCELERER  ************
-    public function Accelerer($vitesse)
+    public function accelerer($vitesse)
     {
         // $this->_vitesse += $vitesse;
         $this->setVitesse($this->getVitesse() + $vitesse);
@@ -86,7 +80,7 @@ class Voiture
         $this->_vitesse = $vitesse;
     }
     // ***********  RALENTIR  ************
-    public function Ralentir($vitesse)
+    public function ralentir($vitesse)
     {
         // $this->_vitesse -= $vitesse;
         $this->setVitesse($this->getVitesse() - $vitesse);
@@ -96,14 +90,13 @@ class Voiture
     {
         return $this->_Demarrer;
     }
-    public function Demarrer()
+    public function demarrer()
     {
-
-        if ($this->_demarrer == 1) {
+        if ($this->_status) {
             echo "La voiture est déjà démarrer";
         } else {
             echo "La voiture démarre";
-            $this->_demarrer = 1;
+            $this->_status = true;
         }
     }
     // ***********  STOPPER  ************
@@ -111,28 +104,25 @@ class Voiture
     {
         return $this->_Stopper;
     }
-    public function Stopper()
+    public function stopper()
     {
-        if ($this->_stopper == 1) {
+        if (!$this->_status) {
             echo " La voiture est déjà arrêté";
         } else {
             echo " La voiture s'arrête";
-            $this->_stopper = 1;
+            $this->_status = false;
+            $this->_vitesse = 0;
         }
     }
 }
 //*************** Voiture 1 ******************
-$vehicule1 = new Voiture("Peugeot", "408", "5");
-$vehicule1->setStatus(1);
-$vehicule1->Demarrer();
-$vehicule1->Demarrer();
-$vehicule1->Accelerer(50);
-$vehicule1->Ralentir(0);
-$vehicule1->Stopper();
-
+$vehicule1 = new Voiture("Peugeot", "408", 5);
+$vehicule1->demarrer();
+$vehicule1->accelerer(50);
+var_dump($vehicule1);
 
 //*************** Voiture 2 ******************
-$vehicule2 = new voiture("Citroën", "C4", "3");
-$vehicule2->setStatus(0);
+$vehicule2 = new Voiture("Citroën", "C4", 3);
+$vehicule2->setStatus(false);
 
-var_dump($vehicule1, $vehicule2);
+var_dump($vehicule2);

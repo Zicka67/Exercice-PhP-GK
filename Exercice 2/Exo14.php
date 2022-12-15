@@ -17,8 +17,8 @@
 // *************** CLASSE PARENT ***************
 class Voiture 
 {
-    private string $_marque;
-    private string $_modele;
+    protected string $_marque;
+    protected string $_modele;
 
     public function __construct(string $marque, string $modele)
     {
@@ -42,7 +42,7 @@ class Voiture
 // *************** CLASSE ENFANT ***************
 class VoitureElec extends Voiture 
 {
-    private string $_autonomie;
+    private int $_autonomie;
 
     public function __construct(string $_marque, string $_modele, string $autonomie)
     {
@@ -50,28 +50,6 @@ class VoitureElec extends Voiture
         $this->_autonomie = $autonomie;
     }
    
-    // public function get_marque()
-    // {
-    //     return $this->_marque;
-    // }
-
-    // public function set_marque($_marque)
-    // {
-    //     $this->_marque = $_marque;
-    //     return $this;
-    // }
-
-    // public function get_modele()
-    // {
-    //     return $this->_modele;
-    // }
-
-    // public function set_modele($_modele)
-    // {
-    //     $this->_modele = $_modele;
-
-    //     return $this;
-    
     public function get_autonomie()
     {
         return $this->_autonomie;
@@ -86,7 +64,7 @@ class VoitureElec extends Voiture
 }
 
 $voiture1 = new Voiture ("Peugeot","408");
-$voiture2 = new VoitureElec ("BMW","I3","100");
+$voiture2 = new VoitureElec ("BMW","I3",100);
 $voiture2->set_autonomie(100);
 
 var_dump($voiture1, $voiture2);
