@@ -12,7 +12,6 @@
 <br><br><br><br><br>
 
 
-
 <?php
 
 // *************** CLASSE PARENT ***************
@@ -38,7 +37,6 @@ class Voiture
         return $this;
     }
 
-
 }
 
 // *************** CLASSE ENFANT ***************
@@ -46,10 +44,9 @@ class VoitureElec extends Voiture
 {
     private string $_autonomie;
 
-    public function __construct(string $_marque, string $_modele, string $_autonomie)
+    public function __construct(string $_marque, string $_modele, string $autonomie)
     {
         parent::__construct($_marque, $_modele);
-        $autonomie = 100;
         $this->_autonomie = $autonomie;
     }
    
@@ -80,22 +77,17 @@ class VoitureElec extends Voiture
         return $this->_autonomie;
     }
 
-    public function set_autonomie($_autonomie)
+    public function set_autonomie($auto)
     {
-        $this->_autonomie = $_autonomie;
+        $this->_autonomie = $auto;
         return $this;
     }
 
-   
 }
-
-
-
 
 $voiture1 = new Voiture ("Peugeot","408");
 $voiture2 = new VoitureElec ("BMW","I3","100");
+$voiture2->set_autonomie(100);
 
 var_dump($voiture1, $voiture2);
-// echo $voiture1->getInfos()."<br/>";
-// echo $voiture2->getInfos()."<br/>";
 
