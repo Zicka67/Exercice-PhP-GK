@@ -41,7 +41,8 @@ class Auteur
 
     public function afficherBibliographie() 
     {
-    //Faire que le livre s'ajoute automatiquement dans le tableau de l'auteur.
+    // foreach
+        //Faire que le livre s'ajoute automatiquement dans le tableau de l'auteur.
     }
 
     // ************      **************
@@ -61,6 +62,12 @@ class Auteur
         $this->_listeLivres = $_listeLivres;
 
         return $this;
+    }
+     // ************  ADDLIVRE **************
+     public function addLivre($livre){
+
+        // Pour ajouter dans un tableau
+        $this->_listLivres[]=$livre;
     }
 }
 
