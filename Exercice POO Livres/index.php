@@ -12,11 +12,18 @@
 
 <?php
 
-require "Auteur.php";
-require "Livre.php";
+// Utiliser les pages suivantes :
+// require "Auteur.php";
+// require "Livre.php";
+spl_autoload_register(function ($class_name) {
+
+    require_once $class_name . '.php';
+
+});
 
 // Instancier l'auteur
-$king = new Auteur("Stephen", "King");
+$king = new Auteur("King", "Stephen");
+
 
 // Instancier les livres
 $livre1 = new Livre($king, "Ca", 1986, 1138, 20);
@@ -25,9 +32,12 @@ $livre3 = new Livre($king, "Le Fléau", 1978, 823, 14);
 $livre4 = new Livre($king, "Shining", 4977, 447, 16);
 
 
-echo $livre1->getAuteur();
+echo "<strong>" . "Livres de" . "</strong>"  . " " . "<strong>" . $king . "</strong>" . "<br> <br>"; 
+// var_dump($king->get_listeLivres());
+echo $king->afficherBibliographie();
 
-// var_dump($livre1);
+
+
 
 
 ?>
