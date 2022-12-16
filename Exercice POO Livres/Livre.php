@@ -1,11 +1,6 @@
 
 
 <?php
-//titre
-//nbPages
-//dtParution
-//prix
-//auteur (nom, prenom)
 
 class Livre
 {
