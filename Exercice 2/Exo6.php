@@ -22,23 +22,6 @@ alimenterListeDeroulante($elements);
 </head>
 
 <body>
-<!-- EXEMPLE HTML:
-
-<label>Veuillez choisir un ou plusieurs animaux :
-<select name="pets" multiple size="4">
-<optgroup label="Animaux à 4-jambes">
-<option value="Chien">Chien</option>
-<option value="chat">Chat</option>
-<option value="hamster" disabled>Hamster</option>
-</optgroup>
-<optgroup label="Animaux volants">
-<option value="perroquet">Perroquet</option>
-<option value="macaw">Macaw</option>
-<option value="albatros">Albatros</option>
-</optgroup>
-</select>
-</label> -->
-
 
 <!-- Label pour donner la demande a l'utilisateur, et peut être utilisé ou controlé avec for -->
 <!-- option pour donner des éléments menu, des choix dans un formulaire ou document -->
@@ -56,7 +39,7 @@ foreach($list as $civilite) {
     
     ?>
     <!-- Ici pour mettre les options en majuscule -->   <!-- Ici pour afficher les civilités -->
-    <option civilite>                             <!-- <option civilite="<?php //echo strtolower($civilite); ?>">  Pour mettre en minuscule -->
+    <option civilite>                          <!-- <option civilite="<?php //echo strtolower($civilite); ?>">  Pour mettre en minuscule -->
     <?php echo $civilite; ?>
     </option> 
     <?php

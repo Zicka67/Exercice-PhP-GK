@@ -21,12 +21,12 @@ $img = "<img src=\"http://my.mobirise.com/data/userpic/764.jpg\" </a>";
     // str_repeat pour afficher $img, 4 fois
     //echo str_repeat($img, 4)
     
-    $i = 0;
-    $n = 120;
+    $image = 0;
+    $nbCopie = 6;
     
-    while ($i < $n) {
-        echo $img;
-        $i++;
+    while ($image < $nbCopie) {
+        echo $image;
+        $image++;
     }
     
     ?>

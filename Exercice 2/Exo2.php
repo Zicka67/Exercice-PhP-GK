@@ -56,6 +56,7 @@ $tabPaysCapitale = [
     "USA" => "Washington",
     "Italie" => "Rome",
 ];
+//Trie un tableau en ordre croissant et conserve l'association des index
 asort($tabPaysCapitale);
 
 foreach ($tabPaysCapitale as $pays => $capitale) {

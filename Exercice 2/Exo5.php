@@ -26,12 +26,6 @@ afficherInput($nomsInput);
 
 <body>
 
-<!-- <form action="#" method="post">
-<label>Nom &nbsp &nbsp <input type="text" name="nom" /> <br><br>
-<label>Prénom <input type="text" name="prénom" /></p>
-<label>Ville &nbsp &nbsp <input type="text" name="ville" /></p>
-<p><input type="submit" value="Valider"></p>
-</form> -->
 
 <form action="" method="post">
 
