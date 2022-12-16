@@ -15,12 +15,19 @@
 require "Auteur.php";
 require "Livre.php";
 
-$King = new Auteur("Stephen", "King");
+// Instancier l'auteur
+$king = new Auteur("Stephen", "King");
 
+// Instancier les livres
 $livre1 = new Livre($king, "Ca", 1986, 1138, 20);
 $livre2 = new Livre($king, "Simeterre", 1983, 374, 15);
 $livre3 = new Livre($king, "Le Fléau", 1978, 823, 14);
 $livre4 = new Livre($king, "Shining", 4977, 447, 16);
+
+
+echo $livre1->getAuteur();
+
+// var_dump($livre1);
 
 
 ?>
