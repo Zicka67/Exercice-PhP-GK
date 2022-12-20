@@ -2,7 +2,9 @@
 class Compte 
 {
     private string $_libelle;
-    private int $_soldeInit;
+    //float pour les chiffres a virgules
+    //int pour les chiffres entiers
+    private float $_soldeInit; //int ?
     private string $_devise;
     private Titulaire $_titulaireCompte;
 
@@ -69,7 +71,30 @@ class Compte
 
         return $this;
     }
-    
+
+    //*********** CREDITER ***********
+    public function crediter($montant) 
+    {
+        //Pour additioner  
+        $this->soldeInit += $montant;
+    }
+
+    //*********** DEBITER ***********
+    public function debiter($montant)
+    {
+        //Pour soustraire
+        $this->soldeInit -= $montant;
+    }
+
+    //*********** VIREMENT ***********
+    public function virement($montant, Compte $compte) {
+        $this->debiter($montant);
+        $compte->crediter($montant);
+    }
+
+    public function __toString() {
+        return "$this->_libelle($this->_soldeInit $this->_devise)"; 
+    }
 }
 
 
