@@ -85,19 +85,19 @@ class Titulaire
         return $this;
     }
 
-    // public function afficherComptes() 
-    // {
+    public function afficherComptes() 
+    {
     // Pour ajouter un s a compte
-    //         $avecS = (count($this->comptes) > 1 ? "s" : "");
-    //         $resultat = "<br>Compte$avecS de $this<br>";
-    //         $resultat .= count($this->comptes). " compte$avecS";
-    //         $resultat .= "<ul>";
-    //         foreach ($this->comptes as $compte) {
-    //             $resultat .= "<li>$compte</li>";
-    //         }
-    //         $resultat .= "</ul>";
-    //         echo $resultat;
-    //     }
+            $avecS = (count($this->comptes) > 1 ? "s" : "");
+            $resultat = "<br>Compte$avecS de $this<br>";
+            $resultat .= count($this->comptes). " compte$avecS";
+            $resultat .= "<ul>";
+            foreach ($this->comptes as $compte) {
+                $resultat .= "<li>$compte</li>";
+            }
+            $resultat .= "</ul>";
+            echo $resultat;
+        }
 
 
         //************** AGE ***************
