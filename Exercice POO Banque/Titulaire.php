@@ -1,21 +1,23 @@
 <?php
-class Titulaire 
+class Titulaire
 {
     private string $_nom;
     private string $_prenom;
-    private int $_dtNaissance;
+    private DateTime $_dtNaissance;
     private string $_ville;
-    private string $_allComptes;
+    private array $_allComptes;
 
     // création de construct (ne pas mettre allComptes, il sera ajouter ailleurs)
     public function __construct($nom, $prenom, $dtNaissance, $ville)
 {
     $this->_nom = $nom;
     $this->_prenom = $prenom;
-    $this->_dtNaissance = $dtNaissance;
+    $this->_dtNaissance = new DateTime ($dtNaissance);
     $this->_ville = $ville;
     $this->_allComptes = [];
 }
+
+
 //********** NOM ***********    
 
     public function get_nom()
@@ -56,6 +58,7 @@ class Titulaire
         return $this;
     }
 
+
     //********** VILLE ***********    
     public function get_ville()
     {
@@ -82,21 +85,35 @@ class Titulaire
         return $this;
     }
 
-    public function afficherComptes() 
+    // public function afficherComptes() 
+    // {
+    // Pour ajouter un s a compte
+    //         $avecS = (count($this->comptes) > 1 ? "s" : "");
+    //         $resultat = "<br>Compte$avecS de $this<br>";
+    //         $resultat .= count($this->comptes). " compte$avecS";
+    //         $resultat .= "<ul>";
+    //         foreach ($this->comptes as $compte) {
+    //             $resultat .= "<li>$compte</li>";
+    //         }
+    //         $resultat .= "</ul>";
+    //         echo $resultat;
+    //     }
+
+
+        //************** AGE ***************
+    public function getAge()
     {
-        // var_dump($this->_allComptes);
-        foreach ($this->_allComptes as $compte)
-        {
-           echo $compte->get_libelle();
-           echo $compte->get_soleInit();
-           echo $compte->get_devise();
-           echo $compte->get_titulaireCompte();
-        }
+        return date_diff(new DateTime(), $this->dtNaissance)->format("%Y");
+    }
+        //****************** ADD COMPTE ***************
+    public function addCompte(Compte $compte) {
+        $this->comptes[] = $compte;
+        echo "Le $compte est ajouté.<br>";
+    }
+        //*****************************************************
+    public function __toString() {
+        echo "$this->prenom $this->nom"." (".$this->getAge()." ans)";
     }
 
-    public function addCompte($compte){
-        // Pour ajouter un compte dans le tableau allComptes
-        $this->_allComptes[]=$compte;
-    }
 }
 
