@@ -30,6 +30,12 @@ $compte1 = new Compte("Compte courant", 5000000, "Dollars", $titulaire);
 $compte2 = new Compte("Livret A", 1000000, "Dollars", $titulaire);
 
 
+echo "fqfqzzq";
+
+var_dump($compte1);
+
+
+
 echo $titulaire->afficherComptes;
 
 var_dump($compte1);
