@@ -1,14 +1,18 @@
 <?php
-class Compte 
+class Titulaire 
 {
     private string $_nom;
     private string $_prenom;
-    private string $_dtNaissance;
+    private int $_dtNaissance;
     private string $_ville;
-    private string $_allComptes;
-    
+    private string $_allComptes;  //lister les comptes comme avec les livres de l'auteur
 }
 
+
+// public function __construct()
+// {
+
+// }
 
 
 
