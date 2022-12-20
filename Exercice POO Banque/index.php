@@ -18,6 +18,13 @@
 require "Compte.php";
 require "Titulaire.php";
 
+// Instancier un titulaire de compte
+$titulaire = new Titulaire("Musk", "Elon");
+
+// Instancier un compte
+$compte1 = new Compte($titulaire, "Compte courant");
+$compte2 = new Compte($titulaire, "Livret A");
+
 
 
 
