@@ -3,17 +3,18 @@ class Titulaire
 {
     private string $_nom;
     private string $_prenom;
-    private string $_dtNaissance;
+    private int $_dtNaissance;
     private string $_ville;
     private string $_allComptes;
 
-    public function __construct($nom, $prenom, $dtNaissance, $ville, $allComptes)
+    // création de construct (ne pas mettre allComptes, il sera ajouter ailleurs)
+    public function __construct($nom, $prenom, $dtNaissance, $ville)
 {
     $this->_nom = $nom;
     $this->_prenom = $prenom;
     $this->_dtNaissance = $dtNaissance;
     $this->_ville = $ville;
-    $this->_allComptes = $allComptes;
+    $this->_allComptes = [];
 }
 //********** NOM ***********    
 
@@ -80,4 +81,22 @@ class Titulaire
 
         return $this;
     }
+
+    public function afficherComptes() 
+    {
+        // var_dump($this->_allComptes);
+        foreach ($this->_allComptes as $compte)
+        {
+           echo $compte->get_libelle();
+           echo $compte->get_soleInit();
+           echo $compte->get_devise();
+           echo $compte->get_titulaireCompte();
+        }
+    }
+
+    public function addCompte($compte){
+        // Pour ajouter un compte dans le tableau allComptes
+        $this->_allComptes[]=$compte;
+    }
 }
+
