@@ -9,16 +9,16 @@ class Titulaire
 
     // création de construct (ne pas mettre allComptes, il sera ajouter ailleurs)
     public function __construct($nom, $prenom, $dtNaissance, $ville)
-{
-    $this->_nom = $nom;
-    $this->_prenom = $prenom;
-    $this->_dtNaissance = new DateTime ($dtNaissance);
-    $this->_ville = $ville;
-    $this->_allComptes = [];
-}
+    {
+        $this->_nom = $nom;
+        $this->_prenom = $prenom;
+        $this->_dtNaissance = new DateTime($dtNaissance);
+        $this->_ville = $ville;
+        $this->_allComptes = [];
+    }
 
 
-//********** NOM ***********    
+    //********** NOM ***********    
 
     public function get_nom()
     {
@@ -85,35 +85,38 @@ class Titulaire
         return $this;
     }
 
-    public function afficherComptes() 
-    {
-    // Pour ajouter un s a compte
-            $avecS = (count($this->comptes) > 1 ? "s" : "");
-            $resultat = "<br>Compte$avecS de $this<br>";
-            $resultat .= count($this->comptes). " compte$avecS";
-            $resultat .= "<ul>";
-            foreach ($this->comptes as $compte) {
-                $resultat .= "<li>$compte</li>";
-            }
-            $resultat .= "</ul>";
-            echo $resultat;
-        }
 
-
-        //************** AGE ***************
+    //****************** AGE ***************
     public function getAge()
     {
         return date_diff(new DateTime(), $this->dtNaissance)->format("%Y");
     }
-        //****************** ADD COMPTE ***************
-    public function addCompte(Compte $compte) {
-        $this->comptes[] = $compte;
+
+     //****************** ADD COMPTE ***************
+    public function addCompte(Compte $compte)
+    {
+        $this->_allComptes[] = $compte;
         echo "Le $compte est ajouté.<br>";
     }
-        //*****************************************************
-    public function __toString() {
-        echo "$this->prenom $this->nom"." (".$this->getAge()." ans)";
+
+    // public function afficherComptes()
+    // {
+    //     // Afficher une ul
+    //        $montant = "<ul>";
+    //        foreach ($this->_allComptes as $compte) {
+    //     // Affiche les comptes en li
+    //            $montant .= "<li>$compte</li>";
+    //        }
+    //        $montant = "</ul>";
+    //     foreach ($this->_allComptes as $compte) {
+    //         echo $compte();
+    //     }
+    // }
+
+
+    //*****************************************************
+    public function __toString()
+    {
+        echo "$this->prenom $this->nom" . " (" . $this->getAge() . " ans)";
     }
-
 }
-
