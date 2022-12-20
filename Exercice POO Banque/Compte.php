@@ -76,15 +76,17 @@ class Compte
     public function crediter($montant) 
     {
         //Pour additioner  
-        $this->soldeInit += $montant;
+        $this->_soldeInit += $montant;
     }
 
     //*********** DEBITER ***********
     public function debiter($montant)
     {
         //Pour soustraire
-        $this->soldeInit -= $montant;
+        $this->_soldeInit -= $montant;
     }
+
+
 
     //*********** VIREMENT ***********
     public function virement($montant, Compte $compte) {
@@ -95,6 +97,8 @@ class Compte
     public function __toString() {
         return "$this->_libelle($this->_soldeInit $this->_devise)"; 
     }
+
+    
 }
 
 
