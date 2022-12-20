@@ -28,9 +28,20 @@
     $compte1 = new Compte("Compte courant", 5000000, "$", $titulaire);
     $compte2 = new Compte("Livret A", 1000000, "$", $titulaire);
 
-    // echo $titulaire->afficherComptes();
+    $compte1->virement(1000000, $compte2);
+    $compte1->crediter(1000000);
+    $compte1->debiter(500000);
 
-    // var_dump($compte1);
+    $compte2->virement(0, $compte1);
+    $compte1->crediter(0);
+    $compte1->debiter(0);
+
+    // echo $compte1;
+    // echo $titulaire->afficherComptes();
+    // var_dump($titulaire);
+
+    echo $compte1 . "<br>";
+    echo $compte2 . "<br>";
 
 
     ?>
