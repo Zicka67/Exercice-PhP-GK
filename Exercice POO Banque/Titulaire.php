@@ -104,7 +104,9 @@ class Titulaire
     {
         foreach ($this->_allComptes as $compte)
         {
-            echo "<br>" . $compte . "<br>";
+            echo "<ul";
+            echo "<li>" . "<br>" . $compte . "</li>";
+            echo "</ul>";
         }
     }
     
