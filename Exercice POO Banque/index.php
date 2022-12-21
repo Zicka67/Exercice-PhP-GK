@@ -28,6 +28,12 @@ $titulaire1 = new Titulaire("Musk", "Elon", "28-06-1971", "Pretoria");
 $compte1 = new Compte("Compte courant", 5000, "$", $titulaire1);
 $compte2 = new Compte("Livret A", 1000, "$", $titulaire1);
 
+echo "<br>" . $titulaire1->__toString() . "&nbsp";
+
+
+echo "<br>" . " Ville :" . "&nbsp" .  $titulaire1->get_ville() . "&nbsp" ."<br>";
+echo "<br>" . $titulaire1->afficherComptes() . "&nbsp";
+
 $compte1->virement(0, $compte2);
 $compte1->crediter(0);
 $compte1->debiter(0);
@@ -37,7 +43,7 @@ $compte1->crediter(0);
 $compte1->debiter(0);
 
 // echo $titulaire1->$nom;
-echo $titulaire1->afficherComptes();
+
 
 
 ?>
