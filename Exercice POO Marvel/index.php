@@ -12,22 +12,34 @@
 <body>
 
 
-
 <?php
 
 require "Personnages.php";
 
 //On créer un nouveau Personnage, ici $batman
-$batman = new Personnage();
+$batman = new Personnage("Batman");
 
+//Pour appeler la function regenerer
+$batman->regenerer(20);
+
+var_dump($batman);
 
 //Pour récupérer la vie initiale (de la class Personnage de BASE)
 //var_dump($batman->vie);
 
-//Pour appeler la function crier (de la class Personnage de BASE)
-var_dump($batman->crier());
+//**************************************************************************
 
+//On créer un nouveau Personnage, ici $hulk
+$hulk = new Personnage("Hulk");
 
+$hulk->vie = 150;
+$hulk->atk = 40;
+
+//Pour appeler la function regenerer
+$hulk->regenerer(0);
+
+var_dump($hulk->mort());
+var_dump($hulk);
 
 
 
