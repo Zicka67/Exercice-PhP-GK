@@ -20,9 +20,11 @@ require "Personnages.php";
 $batman = new Personnage("Batman");
 
 //Pour appeler la function regenerer
-$batman->regenerer(20);
+// $batman->regenerer(20);
 
-var_dump($batman);
+
+
+// var_dump($batman);
 
 //Pour récupérer la vie initiale (de la class Personnage de BASE)
 //var_dump($batman->vie);
@@ -32,14 +34,27 @@ var_dump($batman);
 //On créer un nouveau Personnage, ici $hulk
 $hulk = new Personnage("Hulk");
 
-$hulk->vie = 150;
+//On change les paramètres vie et atk de cet objet Personnage
+$hulk->vie = 140;
 $hulk->atk = 40;
 
-//Pour appeler la function regenerer
-$hulk->regenerer(0);
+//Pour appeler la fonction attaquer
+$hulk->attaquer($batman);
+$batman->regenerer(20);
 
-var_dump($hulk->mort());
+//Pour appeler la function regenerer
+// $hulk->regenerer(0);
+
+var_dump($batman);
 var_dump($hulk);
+
+//Savoir si Batman est mort ou non
+if($batman->mort())
+{
+    echo "Batman est mort.";
+} else {
+    echo "Batman est toujours en vie avec" . " " . $batman->vie . " de vie.";
+}
 
 
 
