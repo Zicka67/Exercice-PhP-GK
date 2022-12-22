@@ -3,9 +3,9 @@
 class Personnage
 {
     //On donne des caractéristiques a cet objet Personnage
-    public $vie = 40;
-    public $atk = 20;
-    public $nom;
+    private $vie = 40;
+    private $atk = 20;
+    private $nom;
     
     //Pour construire les paramètres du new Personnage
     public function __construct($nom)
@@ -13,14 +13,14 @@ class Personnage
         $this->nom = $nom;
     }
     
-    //******************************** CRIER ********************************
+    //******************************** CRIER ***********************************
     //Un exemple de function pour ce Personnage
     // public function crier()
     // {
         //     echo "I'M BATMAN !";
         // }
         
-        //******************************** REGENERER ********************************
+        //******************************** REGENERER ***************************
         //Un exemple de function pour ce Personnage
         public function regenerer($vie = null)
         {
@@ -32,7 +32,7 @@ class Personnage
             }
         }
         
-        //******************************** MORT ********************************
+        //******************************** MORT *******************************
         //Function pour voir si le personnage est mort
         public function mort()
         {
@@ -40,7 +40,7 @@ class Personnage
         }
         
         
-        //******************************** REGENERER ********************************        
+        //******************************** REGENERER **************************      
         
         public function attaquer($cible)
         {
@@ -49,10 +49,44 @@ class Personnage
             $cible-> vie -= $this-> atk; //On enlève l'atk de $this( l'attaquant) à la vie de la cible 
         }       
         
+        //******************************** VIE ******************************** 
+        public function getVie()
+        {
+            return $this->vie;
+        }
         
+        public function setVie($vie): self
+        {
+            $this->vie = $vie;
+            
+            return $this;
+        }
         
+        //******************************** ATK ******************************** 
+        public function getAtk()
+        {
+            return $this->atk;
+        }
         
+        public function setAtk($atk): self
+        {
+            $this->atk = $atk;
+            
+            return $this;
+        }
         
+        //******************************** NOM ******************************** 
+        public function getNom()
+        {
+            return $this->nom;
+        }
+        
+        public function setNom($nom): self
+        {
+            $this->nom = $nom;
+            
+            return $this;
+        }
         
         
     }
