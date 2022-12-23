@@ -1,16 +1,21 @@
 <?php
 
-class Film {
-    private $titre;
-    private $dtSortie;
-    private $duree;
-    private $realisateur;
+
+class Film 
+{
+    protected $titre;
+    protected $dtSortie;
+    protected $duree;
+    protected $realisateur;
+    protected $genre;
     
-    public function __construct($titre, $dtSortie, $duree, Realisateur $realisateur) {
+    public function __construct($titre, $dtSortie, $duree, Realisateur $realisateur, $genre) {
         $this->titre = $titre;
-        $this->dateSortie = $dtSortie;
+        $this->dtSortie = $dtSortie;
         $this->duree = $duree;
         $this->realisateur = $realisateur;
+        $this->genre = $genre;
+        
     }
     
     //************** TITRE **************
@@ -61,5 +66,39 @@ class Film {
         
         return $this;
     }
-
+    
+    //************** REALISATEUR **************
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+    
+    
+    public function setGenre($genre): self
+    {
+        $this->genre = $genre;
+        
+        return $this;
+    }
+    
+    public static function afficherFilmsParGenre($films) {
+        // Création du tableau qui associe chaque genre à la liste de films qui lui correspond
+        $filmsParGenre = [];
+        foreach ($films as $film) {
+            $nomGenre = $film->getGenre()->getNom();
+            if (!isset($filmsParGenre[$nomGenre])) {
+                $filmsParGenre[$nomGenre] = [];
+            }
+            $filmsParGenre[$nomGenre][] = $film;
+        }
+        foreach ($filmsParGenre as $nomGenre => $films) {
+      // Affichage du nom du genre
+      echo "<br>" . $nomGenre . "<br>";
+      // Affichage de la liste de films du genre
+      foreach ($films as $film) {
+        echo "- " . $film->getTitre() . "<br>";
+      }
+      echo "<br>";
+    }
+    }
 }
