@@ -1,26 +1,42 @@
 <?php
 
 class Genre {
-    public $nom;
-
-    public function __construct($nom) 
+    private $genre;
+    private $nom;
+    
+    public function __construct($nom) //faire hériter genre de la class film et rajouter le genre ?
     {
         $this->nom = $nom;
     }
-}
+    
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+    
+    public function setGenre($genre): self
+    {
+        $this->genre = $genre;
+        
+        return $this;
+    }
+    
+    public function getNom()
+    {
+        return $this->nom;
+    }
 
-$listGenre = array(
-    new Genre('Comédie'),
-    new Genre('Action'),
-    new Genre('SF'),
-    new Genre('Thriller'),
-);
+    public function setNom($nom): self
+    {
+        $this->nom = $nom;
 
-// echo '<table>';
-// echo '<tr><th>Genre cinématographique</th></tr>';
-// foreach ($listGenre as $style) {
-//     echo '<tr>';
-//     echo '<td>' . $style->nom . '</td>';
-//     echo '</tr>';
-// }
-// echo '</table>';
+        return $this;
+    }
+}  
+
+
+
+
+
+
+
