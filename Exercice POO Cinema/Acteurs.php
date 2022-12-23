@@ -1,84 +1,47 @@
 <?php
 
-class Acteur
+class Acteur extends Personne
 {
-    private string $nom;
-    private string $prenom;
-    private string $sexe;
-    private string $dtNaissance;
-    protected array $role;
+    protected array $acteurs;
     
+    public function __construct($nom, $prenom, $sexe, $dtNaissance)
+    {
+        parent::__construct($nom, $prenom, $sexe, $dtNaissance);
+        $this->acteurs = [];
+    }
     
-    public function __construct($nom, $prenom, $sexe, $dtNaissance, $role)
+    //****************** ACTEUR ******************
+    public function get_acteurs()
     {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->sexe = $sexe;
-        $this->dtNaissance = $dtNaissance;
-        // $this->role = [];
+        return $this->_acteurs;
     }
-    //********************** NOM **********************
-    public function getNom(): string
+    
+    public function set_acteurs($_acteurs)
     {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
-
+        $this->_acteurs = $_acteurs;
+        
         return $this;
     }
+    
 
-     //********************** PRENOM **********************
-    public function getPrenom(): string
-    {
-        return $this->prenom;
+    // ************  ADDACTEUR **************
+    public function addActeur($acteur){
+        // Pour ajouter dans un tableau
+        $this->_acteurs[]=$acteur;
     }
-
-    public function setPrenom(string $prenom): self
+    
+    // ************  AFFICHERACTEUR **************
+    public function afficherActeur() 
     {
-        $this->prenom = $prenom;
-
-        return $this;
+        foreach ($this->acteurs as $acteur)
+        {
+            echo $acteur->get_Nom();
+            echo $acteur->get_Prenom();
+            echo $acteur->get_Sexe();
+            echo $acteur->get_DtNaissance();
+        }
     }
-     //********************** SEXE **********************
-    public function getSexe(): string
-    {
-        return $this->sexe;
-    }
+    
+}
 
-    public function setSexe(string $sexe): self
-    {
-        $this->sexe = $sexe;
-
-        return $this;
-    }
-
-     //********************** DTNAISSANCE **********************
-    public function getDtNaissance()
-    {
-        return $this->dtNaissance;
-    }
-
-    public function setDtNaissance(DateTime $dtNaissance): self
-    {
-        $this->dtNaissance = $dtNaissance;
-
-        return $this;
-    }
-
-     //********************** ROLE **********************
-    public function getRole(): array
-    {
-        return $this->role;
-    }
-
-    public function setRole(array $role): self
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-}   
 
