@@ -81,10 +81,13 @@ class Film
         return $this;
     }
     
+    //Créer la function qui a commme paramètre le tableau $films
     public static function afficherFilmsParGenre($films) {
-        // Création du tableau qui associe chaque genre à la liste de films qui lui correspond
+        // Création du tableau vide qui associe chaque genre à la liste de films qui lui correspond
         $filmsParGenre = [];
+        //On parcours chaque film dans le tableau $films
         foreach ($films as $film) {
+            //On créer une var $nonGenre pour chaque film, et prendre getGenre pour récupérer l'objet Genre associé au film, et getNom pour récupérer le nom du genre
             $nomGenre = $film->getGenre()->getNom();
             if (!isset($filmsParGenre[$nomGenre])) {
                 $filmsParGenre[$nomGenre] = [];
@@ -92,13 +95,13 @@ class Film
             $filmsParGenre[$nomGenre][] = $film;
         }
         foreach ($filmsParGenre as $nomGenre => $films) {
-      // Affichage du nom du genre
-      echo "<br>" . $nomGenre . "<br>";
-      // Affichage de la liste de films du genre
-      foreach ($films as $film) {
-        echo "- " . $film->getTitre() . "<br>";
-      }
-      echo "<br>";
-    }
+            // Affichage du nom du genre
+            echo "<br>" . $nomGenre . "<br>";
+            // Affichage de la liste de films du genre
+            foreach ($films as $film) {
+                echo "- " . $film->getTitre() . "<br>";
+            }
+            echo "<br>";
+        }
     }
 }
