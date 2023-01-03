@@ -14,7 +14,9 @@ class Film
         $this->dtSortie = $dtSortie;
         $this->duree = $duree;
         $this->realisateur = $realisateur;
-        $this->genre = $genre;
+
+        $this->setGenre($genre);
+        $this->realisateur->addFilm($this);
         
     }
     
@@ -74,36 +76,52 @@ class Film
     }
     
     
-    public function setGenre($genre): self
+    public function setGenre($genre)
     {
         $this->genre = $genre;
-        
-        return $this;
+        $genre->addFilm($this); // permet de lier chaque film a son genre.
+        //setGenre définit le genre d'un film. Et prend en para un objet de type "genre". Elle affecte cet objet a l'attribut "$genre" de l'objet "film".
+        //Elle appel la méthode addfilm de l'objet $genre et ajoute l'ojet Film en cours ($this) au tableau $tabFilmGenre de l'objet Genre
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Créer la function qui a commme paramètre le tableau $films
-    public static function afficherFilmsParGenre($films) {
-        // Création du tableau vide qui associe chaque genre à la liste de films qui lui correspond
-        $filmsParGenre = [];
-        //On parcours chaque film dans le tableau $films
-        foreach ($films as $film) {
-            //On créer une var $nonGenre pour chaque film, et prendre getGenre pour récupérer l'objet Genre associé au film, et getNom pour récupérer le nom du genre
-            $nomGenre = $film->getGenre()->getNom();
-            //!isset vérifie si le tableau $filmsParGenre ne contient pas un $nomGenre, si le $noGenre existe déjà le if n'est pas executé.
-            if (!isset($filmsParGenre[$nomGenre])) {
-                $filmsParGenre[$nomGenre] = [];
-            }
-            //ajoute un film au tableau $filmParGenre dans la liste associé a $nomGenre(type de films). [] on ajoute les films dans un tableau vide.
-            $filmsParGenre[$nomGenre][] = $film;
-        }
-        foreach ($filmsParGenre as $nomGenre => $films) {
-            // Affichage du nom du genre
-            echo "<br>" . $nomGenre . "<br>";
-            // Affichage de la liste de films du genre
-            foreach ($films as $film) {
-                echo "- " . $film->getTitre() . "<br>";
-            }
-            echo "<br>";
-        }
-    }
+    // public static function afficherFilmsParGenre($films) {
+        
+    //     $filmsParGenre = [];// Création du tableau vide
+        
+    //     foreach ($films as $film) { //Pour chaque film dans le tableau $films
+    //         $nomGenre = $film->getGenre()->getNom(); //On prend le nom du genre dans $film et il va être = a $nomGenre
+    //         if (!isset($filmsParGenre[$nomGenre])) { //!isset vérifie si le genre dans le tab n'existe pas dans $filmsPArGenre 
+    //             $filmsParGenre[$nomGenre] = []; // 
+    //         }
+    //         //ajoute un film au tableau $filmParGenre dans la liste associé a $nomGenre(type de films). [] on ajoute les films dans un tableau vide.
+    //         $filmsParGenre[$nomGenre][] = $film;
+    //     }
+    //     foreach ($filmsParGenre as $nomGenre => $films) {
+    //         // Affichage du nom du genre
+    //         echo "<br>" . $nomGenre . "<br>";
+    //         // Affichage de la liste de films du genre
+    //         foreach ($films as $film) {
+    //             echo "- " . $film->getTitre() . "<br>";
+    //         }
+    //         echo "<br>";
+    //     }
+    // }
 }
