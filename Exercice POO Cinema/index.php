@@ -7,6 +7,7 @@ require "Genres.php";
 require "Acteurs.php";
 require "Realisateurs.php";
 require "Role.php";
+Require "Casting.php";
 
 
 $acteur1 = new Acteur("Ford", "Harrison", "Homme", "13-07-1942", "Han solo"); // ajouter le film pour lister sa filmographie
