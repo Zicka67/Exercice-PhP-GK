@@ -9,11 +9,14 @@ require "Realisateurs.php";
 
 //créer des tab ? Et foreach pour parcourir chaque  tab et afficher les genres, acteurs etc..
 
-// $acteur1 = new Acteur("Ford", "Harrison", "Homme", "13-07-1942", "Han solo");
-// $acteur2 = new Acteur("Bale", "Christian", "Homme", "30-01-1974", "Batman");
-// $acteur3 = new Acteur("Theron", "Charlize", "Femme", "07-08-1975", "Aileen");
-// $acteur4 = new Acteur("Chan", "Jackie", "Homme", "07-04-1954", "Jimmy Tong");
-//rajouter d'autres acteurs qui ont incarné Batman ( Val Kilmer, George Clooney,) pour la liste des rôles.
+$acteurs= [
+$acteur1 = new Acteur("Ford", "Harrison", "Homme", "13-07-1942", "Han solo"),
+$acteur2 = new Acteur("Bale", "Christian", "Homme", "30-01-1974", "Batman"),
+$acteur3 = new Acteur("Theron", "Charlize", "Femme", "07-08-1975", "Aileen"),
+$acteur4 = new Acteur("Chan", "Jackie", "Homme", "07-04-1954", "Jimmy Tong"),
+$acteur5 = new Acteur("Kilmer", "Val", "Homme", "31-12-1959", "Batman"),
+$acteur6 = new Acteur("Clooney", "George", "Homme", "06-05-1961", "Batman"),
+];
 
 $rea1 = new Realisateur("Lucas", "George", "Homme", "14-05-1944");
 $rea2 = new Realisateur("Reeves", "Matt", "Homme", "27-04-1966");
@@ -36,13 +39,17 @@ $films = [
     $film8 = new Film("Star Wars 3", "13-10-1999", 136, $rea1, $genre1),
 ];
 
-var_dump($film4);
+// $role = $acteur1->getRole();
+// echo "Le rôle de l'acteur 1 est : " . $role . "<br>";
 
-// echo $acteur1->afficherActeur();
-Realisateur::afficherFilmoRea("Lucas");
+
+Realisateur::afficherFilmoRea($films, "Lucas");
 Film::afficherFilmsParGenre($films);
+acteur::afficherRoleParActeur($acteurs);
 
-// Genre::afficherGenreFilm();
+
+
+
 
 
 
