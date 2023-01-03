@@ -89,9 +89,11 @@ class Film
         foreach ($films as $film) {
             //On créer une var $nonGenre pour chaque film, et prendre getGenre pour récupérer l'objet Genre associé au film, et getNom pour récupérer le nom du genre
             $nomGenre = $film->getGenre()->getNom();
+            //!isset vérifie si le tableau $filmsParGenre ne contient pas un $nomGenre, si le $noGenre existe déjà le if n'est pas executé.
             if (!isset($filmsParGenre[$nomGenre])) {
                 $filmsParGenre[$nomGenre] = [];
             }
+            //ajoute un film au tableau $filmParGenre dans la liste associé a $nomGenre(type de films). [] on ajoute les films dans un tableau vide.
             $filmsParGenre[$nomGenre][] = $film;
         }
         foreach ($filmsParGenre as $nomGenre => $films) {
