@@ -58,30 +58,65 @@ class Acteur extends Personne
         }
     }
     
-    //créer un tab 
-    //parcourir le tab acteurs
-    //pour chaque acteur dans acteurs
-    //afficher son rôle
+    //************* AFFICHERROLE ****************/
     
-    
-    public static function afficherRoleParActeur($acteurs) {
-        $roleParActeur = []; //Création d'un tab vide
-        foreach ($acteurs as $acteur) { //Pour chaque $acteur dans $acteurs
-            $role = $acteur->getRole(); // On prend le role de l'acteur et il va être = a $role
-            if (!isset($roleParActeur[$role])) { // si le role dans le tab n'existe pas dans $roleParActeur 
-                $roleParActeur[$role] = []; // On l'ajoute dedans
-            }
-            $roleParActeur[$role][] = $acteur;//ajoute l'acteur au tab $roleParActeur associé a don role
-        }
-        foreach ($roleParActeur as $role => $acteurs) {
-            // Affichage du rôle
-            echo "<br>" . $role . "<br>";
-            // Affichage de la liste d'acteurs ayant ce rôle
-            foreach ($acteurs as $acteur) {
-                echo "- " . $acteur->getPrenom() . " " . $acteur->getNom() . "<br>";
-            }
-            echo "<br>";
-            
-        }
+    public function afficherRoles() {
+        echo "Acteur : " . $this->prenom . " " . $this->nom . "<br>"; //ici $this est l'acteur qu'on souhaite afficher ( exemple dans l'index $acteur6->afficherRoles();)
+        echo "Rôle : " . $this->role . "<br>"; //ici $this est l'acteur qu'on souhaite afficher ( exemple dans l'index $acteur6->afficherRoles();)
     }
-}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // public static function afficherRolesParActeur($acteurs, $nomActeur) {
+        
+        //     $roleParActeur = []; //Création d'un tab vide
+        
+        //     foreach ($acteurs as $acteur) { //Pour chaque $acteur dans $acteurs
+            //         if ($acteur->getNom() == $nomActeur) { // Si le nom de l'acteur correspond au nom recherché ( ici $nomActeur)
+                //             $roleParActeur[] = $acteur->getRole();  // Ajouter son rôle au tableau
+                //         }
+                //     }
+                
+                //     $test = implode($roleParActeur); // Pour convertir un tableau en string 
+                //     echo $test . " ";
+                
+                //     // *************** OU ****************
+                
+                //     foreach($roleParActeur as $role){
+                    //         echo $role . "<br>";
+                    //     }
+                    
+                    // }
+                    
+                    // // *****************************
+                    
+                    // public static function ActeursParRole($acteurs, $role) {
+                        //     $acteursParRole = [];
+                        //     foreach ($acteurs as $acteur) {
+                            //         if ($acteur->getRole() == $role) {
+                                //             $acteursParRole[] = $acteur->getPrenom() . " " . $acteur->getNom();
+                                //         }
+                                //     }
+                                //     return implode(', ', $acteursParRole);
+                                // }
+                                
+                            }
