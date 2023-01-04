@@ -16,12 +16,12 @@ class Acteur extends Personne
     //****************** ACTEUR ******************
     public function get_acteurs()
     {
-        return $this->_acteurs;
+        return $this->acteurs;
     }
     
     public function set_acteurs($_acteurs)
     {
-        $this->_acteurs = $_acteurs;
+        $this->acteurs = $_acteurs;
         
         return $this;
     }
@@ -43,7 +43,7 @@ class Acteur extends Personne
     // ************  ADDACTEUR **************
     public function addActeur($acteur){
         // Pour ajouter dans un tableau
-        $this->_acteurs[]=$acteur;
+        $this->acteurs[]=$acteur;
     }
     
     // ************  AFFICHERACTEUR **************
