@@ -49,7 +49,7 @@ $role5 = new role("Skywalker Luke");
 
 // *** Casting ***
 $casting1 = new Casting($acteur1, $role2, $film1);
-$casting2 = new Casting($acteur7, $role5, $film1);
+$casting2 = new Casting($acteur4, $role5, $film4);
 $casting3 = new Casting($acteur2, $role1, $film6);
 $casting4 = new Casting($acteur3, $role3, $film3);
 $casting5 = new Casting($acteur2, $role1, $film2);
@@ -60,10 +60,10 @@ $casting5 = new Casting($acteur2, $role1, $film2);
 $rea1->afficherFilmo(); // Filmo du réa
 $acteur1->getFilmo(); // Filmo de l'acteur
 $film1->getGenre(); // Le film " " est du genre ...
-$genre1->listGenre(); // Liste des films du genre " " 
-$acteur1->listCasting(); // Liste des rôles de l'acteur
-$film3->getDescription(); // Description
-$film1->infoCasting(); // Casting du film
+$genre1->listGenre(); // Liste des films du genre " "    ** RESTE A REPARER ** Pour ca, surement rajouter des casting
+$acteur3->listCasting(); // Liste des rôles de l'acteur  ** RESTE A REPARER ** Pour ca, surement rajouter des casting
+$film1->getDescription(); // Description                 ** RESTE A REPARER ** Pour ca, surement rajouter des casting
+$film3->infoCasting(); // Casting du film
 // var_dump($rea1); //Rea1 prend bien en compte le film l'acteur et le rôle mais 2 fois pour chaque ..
 
 
