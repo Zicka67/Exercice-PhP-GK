@@ -34,42 +34,21 @@ class Realisateur extends Personne
     //************* AFFICHERFILMO ****************/
     
     public function afficherFilmo(){
+        
+        echo "*** Films réalisés par ". $this ." : ***<br>";
         foreach($this->tableauFilms as $film)
         {
-            echo "Titre : " . $film->getTitre() . "<br>";
+            echo $film . "<br>";
             
         }
+    }
+    
+    public function __toString()
+    {
+        return $this->prenom . " " . $this->nom;
     }
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // public static function afficherFilmoRea($films, $nomRea){ //Passer en paramètre $films et $nomRea. Pour que la function prenne $films de l'index
-        
-        //     // Parcourir les films et vérifier si le getNom du getRealisateur == au $nomRea mit en paramètre dans la function
-        //     foreach ($films as $film) {
-            //         if ($film->getRealisateur()->getNom() == $nomRea) {
-                //             //Affiche le titre
-                //             echo $film->getTitre() . "<br>";
-                //         }
-                //     }
-                
-                // }
-                
-            }
+}
