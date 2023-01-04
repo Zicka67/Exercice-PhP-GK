@@ -76,7 +76,7 @@ class Film
     //************** GENRE **************
     public function getGenre()
     {
-        echo " Le film " . $this . " appartient au genre : " . $this->genre;
+        echo " <br>*** Le film " . $this . " appartient au genre : " . $this->genre . "***";
     }
     
     public function setGenre($genre): self
@@ -101,7 +101,7 @@ class Film
         $this->casting[] = $Casting;
     }
     
-    //***************** GETCASTINGS ****************
+    //***************** INFOCASTINGS ****************
     public function infoCasting()
     {
         echo "<br>" . "*** Dans le film ". $this->getTitre() ." le casting est le suivant ***: <br>";
