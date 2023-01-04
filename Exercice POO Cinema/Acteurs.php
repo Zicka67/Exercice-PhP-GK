@@ -5,74 +5,47 @@
 
 class Acteur extends Personne
 {
-    protected array $acteurs;
-    private string $role;
+    private $casting;
     
     
-    public function __construct($nom, $prenom, $sexe, $dtNaissance, $role)
+    public function __construct($nom, $prenom, $sexe, $dtNaissance)
     {
         parent::__construct($nom, $prenom, $sexe, $dtNaissance);
-        $this->acteurs = [];
-        $this->role = $role;
+        $this->casting = [];
     }
     
-    //****************** ACTEUR ******************
-    public function get_acteurs()
+    //****************** CASTING ******************
+    public function getCasting(): array
     {
-        return $this->acteurs;
+        return $this->casting;
     }
     
-    public function set_acteurs($_acteurs)
+    public function setCasting(array $casting): self
     {
-        $this->acteurs = $_acteurs;
+        $this->casting = $casting;
         
         return $this;
     }
     
-    //****************** ROLE ******************
-    public function getRole()
+    function getFilmo()
     {
-        return $this->role;
-    }
-    
-    public function setRole($role): self
-    {
-        $this->role = $role;
-        
-        return $this;
-    }
-    
-    
-    // ************  ADDROLE **************
-    
-    public function addRole($role) {
-        $this->role[] = $role;
-    }
-    
-    
-    // ************  ADDACTEUR **************
-    public function addActeur($acteur){
-        // Pour ajouter dans un tableau
-        $this->acteurs[]=$acteur;
-    }
-    
-    // ************  AFFICHERACTEUR **************
-    public function afficherActeur() 
-    {
-        foreach ($this->acteurs as $acteur)
+        foreach ($this->casting as $film)
         {
-            echo $acteur->get_Nom();
-            echo $acteur->get_Prenom();
-            echo $acteur->get_Sexe();
-            echo $acteur->get_DtNaissance();
+            echo "<br> Bibliographie" . "***" . $film->getFilm()->getTitre()."***<br>";
         }
     }
     
-    //************* AFFICHERROLE ****************/
+    //***************** ADDCASTING ****************
+    public function addCasting($newCasting){ 
+        $this->casting[] = $newCasting;
+    }
     
-    public function afficherRoles() {
-        echo "Acteur : " . $this->prenom . " " . $this->nom . "<br>"; //ici $this est l'acteur qu'on souhaite afficher ( exemple dans l'index $acteur6->afficherRoles();)
-        echo "Rôle : " . $this->role . "<br>"; //ici $this est l'acteur qu'on souhaite afficher ( exemple dans l'index $acteur6->afficherRoles();)
+    //***************LISTCASTING ****************
+    public function listCasting()
+    {
+        foreach ($this->casting as $casting) {
+            echo "<br>" . "<br>" . "***" . $casting->getActeur()->getPrenom() . " " . $casting->getActeur()->getNom() . " à joué " . $casting->getRole(). "***<br>";
+        }
     }
     
     
@@ -89,50 +62,4 @@ class Acteur extends Personne
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    // public static function afficherRolesParActeur($acteurs, $nomActeur) {
-        
-        //     $roleParActeur = []; //Création d'un tab vide
-        
-        //     foreach ($acteurs as $acteur) { //Pour chaque $acteur dans $acteurs
-            //         if ($acteur->getNom() == $nomActeur) { // Si le nom de l'acteur correspond au nom recherché ( ici $nomActeur)
-                //             $roleParActeur[] = $acteur->getRole();  // Ajouter son rôle au tableau
-                //         }
-                //     }
-                
-                //     $test = implode($roleParActeur); // Pour convertir un tableau en string 
-                //     echo $test . " ";
-                
-                //     // *************** OU ****************
-                
-                //     foreach($roleParActeur as $role){
-                    //         echo $role . "<br>";
-                    //     }
-                    
-                    // }
-                    
-                    // // *****************************
-                    
-                    // public static function ActeursParRole($acteurs, $role) {
-                        //     $acteursParRole = [];
-                        //     foreach ($acteurs as $acteur) {
-                            //         if ($acteur->getRole() == $role) {
-                                //             $acteursParRole[] = $acteur->getPrenom() . " " . $acteur->getNom();
-                                //         }
-                                //     }
-                                //     return implode(', ', $acteursParRole);
-                                // }
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            }
+}
