@@ -12,17 +12,6 @@ class Realisateur extends Personne
         $this->tableauFilms = [];
     }
     
-    public function getlistFilms(): array
-    {
-        return $this->listFilms;
-    }
-    
-    public function setlistFilms(array $listFilms): self
-    {
-        $this->listFilms = $listFilms;
-        
-        return $this;
-    }
     
     public function getTableauFilms()
     {
