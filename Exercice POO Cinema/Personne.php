@@ -2,7 +2,6 @@
 
 class Personne 
 {
-    
     protected string $nom;
     protected string $prenom;
     protected string $sexe;
@@ -68,9 +67,6 @@ class Personne
         
         return $this;
     }
-    
-    
-    
     
 }
 
