@@ -26,6 +26,8 @@ class Acteur extends Personne
         
         return $this;
     }
+
+    //****************** GETFILMO ******************
     
     function getFilmo()
     {
