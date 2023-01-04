@@ -27,7 +27,6 @@ class Genre {
         return $this->tabFilmsGenre;
     }
     
-    
     public function setTabFilmsGenre($tabFilmsGenre): self
     {
         $this->tabFilmsGenre = $tabFilmsGenre;
@@ -56,23 +55,11 @@ class Genre {
     }
     
     
-    // //************* AFFICHERFILMS ****************
-    
-    // public function afficherFilms(){
-        //     echo "<br>" . "Genre: " . $this->getNom() . "<br>";
-        //     foreach($this->tabFilmsGenre as $film) //On parcourt le tab tabFilmGenre qui appartient à l'objet en cours d'utilisation.
-        //     //$this fait référence à l'objet de la classe Genre, et tabFilmsGenre est un tableau de films appartenant à cet objet de la classe Genre.
-        //     {
-            //         echo "<br>" . "Nom du film : " . $film->getTitre() . "<br>";
-            //     }
-            // }
-            
-            
-        }  
-        
-        
-        
-        
-        
-        
-        
+}  
+
+
+
+
+
+
+
