@@ -1,16 +1,19 @@
+
 <?php
+
+
 
 class Acteur extends Personne
 {
     protected array $acteurs;
     private string $role;
     
+    
     public function __construct($nom, $prenom, $sexe, $dtNaissance, $role)
     {
         parent::__construct($nom, $prenom, $sexe, $dtNaissance);
         $this->acteurs = [];
         $this->role = $role;
-        
     }
     
     //****************** ACTEUR ******************
@@ -37,6 +40,13 @@ class Acteur extends Personne
         $this->role = $role;
         
         return $this;
+    }
+    
+    
+    // ************  ADDROLE **************
+    
+    public function addRole($role) {
+        $this->role[] = $role;
     }
     
     
@@ -118,5 +128,11 @@ class Acteur extends Personne
                                 //     }
                                 //     return implode(', ', $acteursParRole);
                                 // }
+                                
+                                
+                                
+                                
+                                
+                                
                                 
                             }
