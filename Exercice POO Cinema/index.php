@@ -60,7 +60,7 @@ $casting5 = new Casting($acteur2, $role1, $film2);
 $rea1->afficherFilmo(); // Biblio du réa
 $acteur1->getFilmo(); // Biblio de l'acteur
 $film1->getGenre(); // Le film " " est du genre ...
-$genre1->listGenre();
+$genre1->listGenre(); // Liste des films du genre " " 
 $acteur1->listCasting(); // Liste des rôles de l'acteur
 $film3->getDescription(); // Description
 $film1->infoCasting(); // Casting du film
