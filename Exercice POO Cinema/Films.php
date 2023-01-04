@@ -9,7 +9,7 @@ class Film
     protected $realisateur;
     protected $genre;
     
-    public function __construct($titre, $dtSortie, $duree, Realisateur $realisateur, $genre) {
+    public function __construct($titre, $dtSortie, $duree, $realisateur, $genre) {
         $this->titre = $titre;
         $this->dtSortie = $dtSortie;
         $this->duree = $duree;
