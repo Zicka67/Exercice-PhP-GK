@@ -33,7 +33,7 @@ class Acteur extends Personne
     {
         foreach ($this->casting as $film)
         {
-            echo "<br> Bibliographie" . "***" . $film->getFilm()->getTitre()."***<br>";
+            echo "<br> Bibliographie" . "*** A joué dans : " . $film->getFilm()->getTitre()."***<br>";
         }
     }
     
