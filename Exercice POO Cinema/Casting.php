@@ -7,12 +7,12 @@ class Casting
     private $film;
     
     public function __construct($acteur, $role, $film) {
-        $this->acteur->addCasting($this);
         $this->acteur = $acteur;
+        $this->acteur->addCasting($this);
 
         $this->role = $role;
         $this->role->addCasting($this);
-        
+
         $this->film = $film;
         $this->film->addCasting($this);
     }
