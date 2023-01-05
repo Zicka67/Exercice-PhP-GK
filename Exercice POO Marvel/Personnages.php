@@ -39,7 +39,6 @@ class Personnage
             return $this->vie <= 0;
         }
         
-        
         //******************************** REGENERER **************************      
         
         public function attaquer($cible)
