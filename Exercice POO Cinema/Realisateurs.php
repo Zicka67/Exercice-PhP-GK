@@ -48,7 +48,4 @@ class Realisateur extends Personne
         return $this->prenom . " " . $this->nom;
     }
     
-    
-    
-    
 }
