@@ -61,7 +61,7 @@ class Personne
         return $this->dtNaissance;
     }
     
-    public function setDtNaissance(DateTime $dtNaissance): self
+    public function setDtNaissance(string $dtNaissance): self
     {
         $this->dtNaissance = $dtNaissance;
         
