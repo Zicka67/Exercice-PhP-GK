@@ -6,12 +6,14 @@ class Joueur
     private string $nom;
     private string $prenom;
     private string $dtNaissance;
+    private $tabJoueur = [];
 
-    public function __construct(string $nom,string $prenom,string $dtNaissance)
+    public function __construct(string $prenom, string $nom, string $dtNaissance)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->dtNaissance = $dtNaissance;
+        $this->tabJoueur = [];
     }
 
     public function getNom()
@@ -19,7 +21,7 @@ class Joueur
         return $this->nom;
     }
 
-    public function setNom($nom): self
+    public function setNom(string $nom): self
     {
         $this->nom = $nom;
 
@@ -31,7 +33,7 @@ class Joueur
         return $this->prenom;
     }
 
-    public function setPrenom($prenom): self
+    public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
 
@@ -43,12 +45,28 @@ class Joueur
         return $this->dtNaissance;
     }
 
-    public function setDtNaissance($dtNaissance): self
+    public function setDtNaissance(string $dtNaissance): self
     {
         $this->dtNaissance = $dtNaissance;
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->nom . " " . $this->prenom . " " . $this->dtNaissance;
+    }
 
+    public function addJoueur($joueur){
+        $this->tabJoueur[] = $joueur;
+    }
 
+    public function afficherJoueur(){
+        
+        echo "***  ". $this ." ***<br>";
+        foreach($this->tabJoueur as $joueur)
+        {
+            echo $joueur . "<br>";
+            
+        }
+    }
 }
