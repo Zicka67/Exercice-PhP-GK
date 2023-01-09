@@ -8,7 +8,7 @@ class Club
     private $joueur;
     private $dtCrea;
 
-    public function __construct($clubNom, $pays, $joueur, $dtCrea)
+    public function __construct($clubNom, string $pays, $joueur, $dtCrea)
     {
         $this->clubNom = $clubNom;
         $this->pays = $pays;
