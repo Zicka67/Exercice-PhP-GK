@@ -54,11 +54,5 @@ class Casting
         return $this;
     }
     
-    
-    
-    
-    
-    
-    
-    
+
 }
