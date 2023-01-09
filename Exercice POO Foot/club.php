@@ -5,14 +5,12 @@ class Club
 {
     private string $clubNom;
     private string $pays;
-    private string $joueur;
     private string $dtCrea;
 
-    public function __construct(string $clubNom, string $pays, string $joueur, string $dtCrea)
+    public function __construct(string $clubNom, string $pays, string $dtCrea)
     {
         $this->clubNom = $clubNom;
         $this->pays = $pays;
-        $this->joueur = $joueur;
         $this->dtCrea = $dtCrea;
 
     }
@@ -41,18 +39,6 @@ class Club
         return $this;
     }
 
-    public function getJoueur()
-    {
-        return $this->joueur;
-    }
-
-    public function setJoueur(string $joueur): self
-    {
-        $this->joueur = $joueur;
-
-        return $this;
-    }
-
     public function getDtCrea()
     {
         return $this->dtCrea;
@@ -64,10 +50,7 @@ class Club
 
         return $this;
     }
-    public function __toString()
-    {
-        return $this->joueur;
-    }
+
 
 
 
