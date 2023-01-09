@@ -7,6 +7,7 @@ class Club
     private string $pays;
     private string $dtCrea;
 
+
     public function __construct(string $clubNom, string $pays, string $dtCrea)
     {
         $this->clubNom = $clubNom;
@@ -50,10 +51,6 @@ class Club
 
         return $this;
     }
-
-
-
-
 
 
 
