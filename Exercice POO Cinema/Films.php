@@ -3,7 +3,7 @@
 
 class Film 
 {
-    protected $titre;
+    protected string $titre;
     protected $dtSortie;
     protected $duree;
     protected $realisateur;
@@ -19,8 +19,9 @@ class Film
         $this->genre = $genre;
         $this->casting = [];
         
-        $this->setGenre($genre);
+        
         $this->realisateur->addFilm($this);
+        $this->genre->addFilm($this);
         
     }
     
