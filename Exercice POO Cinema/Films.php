@@ -117,7 +117,5 @@ class Film
         return $this->titre;
     }
     
-    
-    
-    
+  
 }
