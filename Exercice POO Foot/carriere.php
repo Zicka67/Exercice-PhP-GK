@@ -10,8 +10,13 @@ class Carriere
     public function __construct($equipeNom, $joueur, $dtArrivee)
     {
         $this->equipeNom = $equipeNom;
+        // $this->equipeNom->addCarrie:
+
         $this->joueur = $joueur;
+        // $this->joueur->addCarriere($this);
+
         $this->dtArrivee = $dtArrivee;
+        // $this->dtArrivee->addCarriere($this);
     }
 
     public function getEquipeNom()
