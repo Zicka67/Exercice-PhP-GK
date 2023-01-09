@@ -6,7 +6,8 @@ class Joueur
     private string $nom;
     private string $prenom;
     private string $dtNaissance;
-    private $tabJoueur = [];
+    private $tabJoueur;
+    private $carriere;
 
     public function __construct(string $prenom, string $nom, string $dtNaissance)
     {
@@ -14,6 +15,7 @@ class Joueur
         $this->prenom = $prenom;
         $this->dtNaissance = $dtNaissance;
         $this->tabJoueur = [];
+        $this->carriere = [];
     }
 
     public function getNom()
@@ -66,7 +68,12 @@ class Joueur
         foreach($this->tabJoueur as $joueur)
         {
             echo $joueur . "<br>";
-            
         }
+    
     }
+
+    // public function addCarriere($newCarriere){ 
+    //     $this->carriere[] = $newCarriere;
+    // }
+    
 }
