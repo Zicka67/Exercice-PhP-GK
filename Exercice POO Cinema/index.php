@@ -58,7 +58,6 @@ $casting7 = new Casting($acteur6, $role1, $film2);
 $casting8 = new Casting($acteur7, $role2, $film5);
 $casting9 = new Casting($acteur4, $role4, $film7);
 
-
 $rea1->afficherFilmo(); // Filmo du réa
 $acteur7->getFilmo(); // Filmo de l'acteur 
 $film1->getGenre(); // Le film " " est du genre ...
@@ -66,7 +65,6 @@ $genre4->listGenre(); // Liste des films du genre " "    A REPARER
 $acteur1->listCasting(); // Liste des rôles de l'acteur  
 $film7->getDescription(); // Description              
 $film7->infoCasting(); // Casting du film
-
 
 
 
