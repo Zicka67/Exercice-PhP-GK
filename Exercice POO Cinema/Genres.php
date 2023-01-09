@@ -53,8 +53,7 @@ class Genre {
     {
         return $this->nom;
     }
-    
-    
+  
 }  
 
 
