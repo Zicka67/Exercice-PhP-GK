@@ -1,7 +1,7 @@
 <?php
 
 class Genre {
-    private $nom;
+    private string $nom;
     private $tabFilmsGenre;
     
     public function __construct($nom)
@@ -42,10 +42,10 @@ class Genre {
     // ************* GETGenres ****************
     public function listGenre()
     {
-        echo "<br> <br> *** Les films du genre " . $this . " sont:  ***";
+        echo "<br> <br> *** Les films du genre " . $this . " sont: ***";
         foreach ($this->tabFilmsGenre as $film)
         {
-            echo $this->$film ." - " ; // ne fonctionne pas. Pas de film dans le tab ?
+            echo $film->getTitre() ." - " ; // ne fonctionne pas. Pas de film dans le tab ?
         }
     }
     
