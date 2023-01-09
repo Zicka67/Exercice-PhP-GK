@@ -3,7 +3,7 @@
 class Role
 {
     
-    private $nom;
+    private string $nom;
     private $casting;
     
     public function __construct($role) {
