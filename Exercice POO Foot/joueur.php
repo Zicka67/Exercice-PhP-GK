@@ -3,11 +3,11 @@
 
 class Joueur
 {
-    private $nom;
-    private $prenom;
-    private $dtNaissance;
+    private string $nom;
+    private string $prenom;
+    private string $dtNaissance;
 
-    public function __construct($nom, $prenom, $dtNaissance)
+    public function __construct(string $nom,string $prenom,string $dtNaissance)
     {
         $this->nom = $nom;
         $this->prenom = $prenom;
@@ -49,4 +49,6 @@ class Joueur
 
         return $this;
     }
+
+
 }
