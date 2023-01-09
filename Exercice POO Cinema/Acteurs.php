@@ -50,18 +50,5 @@ class Acteur extends Personne
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }
