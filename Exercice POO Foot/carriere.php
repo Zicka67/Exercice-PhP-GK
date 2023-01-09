@@ -40,12 +40,12 @@ class Carriere
 
     public function getDtArrivee()
     {
-        return $this->dtStart;
+        return $this->dtArrivee;
     }
 
     public function setDtArrivee($DtArrivee): self
     {
-        $this->DtArrivee = $DtArrivee;
+        $this->dtArrivee = $DtArrivee;
 
         return $this;
     }
