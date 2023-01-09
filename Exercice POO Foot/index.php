@@ -24,3 +24,11 @@ $joueur5 = new joueur("Gameiro", "Kevin", "1987");
 $joueur6 = new joueur("Benzema", "Karim", "1987");
 
 $carrier1 = new carriere($club1, $joueur2, "2017");
+$carrier2 = new carriere($club2, $joueur5, "2005");
+$carrier3 = new carriere($club3, $joueur3, "2013");
+$carrier4 = new carriere($club4, $joueur6, "2017");
+$carrier5 = new carriere($club5, $joueur4, "2003");
+$carrier6 = new carriere($club6, $joueur4, "2018");
+$carrier7 = new carriere($club3, $joueur1, "2001");
+$carrier8 = new carriere($club1, $joueur1, "2021");
+$carrier9 = new carriere($club1, $joueur3, "2017");
