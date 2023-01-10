@@ -11,7 +11,6 @@ $arg = new Nationalite("Ar");
 $br = new Nationalite("Br");
 $port = new Nationalite("Pt");
 
-
 $france = new Pays("France");
 $espagne = new Pays("Espagne");
 $angleterre = new Pays("Angleterre");
@@ -30,7 +29,6 @@ $real = new Club("FC Barcelone", $espagne, "1899");
 $barca = new Club("Real Madrid", $espagne, "1902");
 $manU = new Club("Man United", $angleterre, "1878");
 $juv = new Club("Juventus", $italie, "1897");
-
 
 $carriere1 = new Carriere($psg, $mbappe, "2017");
 $carriere2 = new Carriere($rcs, $gameiro, "2005");
