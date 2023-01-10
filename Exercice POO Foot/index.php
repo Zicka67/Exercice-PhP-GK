@@ -4,6 +4,12 @@ require "club.php";
 require "joueur.php";
 require "carriere.php";
 require "pays.php";
+require "nationalite.php";
+
+$nationalite = new Nationalite("Fr");
+$nationalite = new Nationalite("Esp");
+$nationalite = new Nationalite("En");
+$nationalite = new Nationalite("It");
 
 $france = new Pays("France");
 $espagne = new Pays("Espagne");
