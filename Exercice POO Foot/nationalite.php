@@ -23,6 +23,8 @@ class Nationalite
         return $this;
     }
     
+    // *** POUR AJOUTER ET AFFICHER LES AJOUTS ***
+    
     public function addJoueur($joueur)
     {
         $this->listJoueur[] = $joueur;
@@ -36,6 +38,8 @@ class Nationalite
         }
         return $result;
     }
+    // ***                                    ***
+    
     
     public function __toString()
     {
